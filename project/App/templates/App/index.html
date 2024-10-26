@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- bootstrap Javascript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Home page</title>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="{% url 'index' %}">Resumonk</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <style>
+        li{
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+        .navbar {
+            padding: 1rem 2rem;
+        }
+    
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1.2rem;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    
+        .navbar-nav .nav-link:hover {
+            background-color: #495057;
+            color: #f8f9fa;
+            border-radius: 5px;
+        }
+    
+        .navbar-nav .nav-link.active {
+            background-color: #007bff;
+            color: white !important;
+            border-radius: 5px;
+        }
+    
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero text-center text-white py-5" style="background-color: #343a40;">
+        <div class="container">
+            <h1 class="display-4">Create Professional Resumes for Free!</h1>
+            <p class="lead">Choose from two customizable templates to make your perfect resume.</p>
+            <a class="btn btn-primary btn-lg" href="#">Create My Resume</a>
+        </div>
+    </section>
+
+    <!-- Template Preview Section -->
+    <section class="templates text-center py-5">
+        <div class="container">
+            <h2 class="mb-4">Choose Your Resume Template</h2>
+            <div class="row">
+                <!-- Template 1 -->
+                <div class="col-md-6">
+                    <div class="template-box border p-3 mb-4">
+                        <img src="{% static 'App/images/template1.jpeg' %}" alt="Template 1" class="img-fluid w-50 border border-dark">
+                        <h3 class="mt-3">Modern Resume</h3>
+                        <p>Perfect for tech professionals and creatives.</p>
+                        <a class="btn btn-primary" href="#">Choose Template</a>
+                    </div>
+                </div>
+                <!-- Template 2 -->
+                <div class="col-md-6">
+                    <div class="template-box border p-3 mb-4">
+                        <img src="template2.jpg" alt="Template 2" class="img-fluid">
+                        <h3 class="mt-3">Classic Resume</h3>
+                        <p>Best for corporate or formal job applications.</p>
+                        <a class="btn btn-primary" href="#">Choose Template</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">How It Works</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <img src="icon1.png" alt="Step 1" class="mb-3">
+                    <h4>Step 1</h4>
+                    <p>Choose a template.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="icon2.png" alt="Step 2" class="mb-3">
+                    <h4>Step 2</h4>
+                    <p>Fill in your details.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="icon3.png" alt="Step 3" class="mb-3">
+                    <h4>Step 3</h4>
+                    <p>Customize it.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="icon4.png" alt="Step 4" class="mb-3">
+                    <h4>Step 4</h4>
+                    <p>Download your resume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Resumonk. All rights reserved.</p>
+        <small><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></small>
+    </footer>
+
+</body>
+
+</html>
