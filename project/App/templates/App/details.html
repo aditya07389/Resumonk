@@ -101,8 +101,178 @@
             <div class="col-md-6">
                 <!-- Placeholder for resume preview or other content -->
                 <h4>Resume Preview</h4>
-                <div id="resumePreview" class="border p-3" style="height: 400px; overflow-y: auto;">
-                    <!-- Dynamic resume content will go here -->
+                <div id="resumePreview" class="border p-3" style="height: 400px; overflow-y: auto; overflow-x: hidden; max-width: 100%;">
+                    <!-- Dynamic resume content goes here -->
+                    <style>
+                        /* General settings */
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        
+                        /* Responsive container for resume */
+                        #resumePreview {
+                            width: 100%;
+                            max-width: 100%;
+                        }
+            
+                        /* A4 Page layout */
+                        .page {
+                            width: 100%; /* Responsive width */
+                            padding: 20px; /* Adjusted padding */
+                            margin: auto;
+                            box-sizing: border-box;
+                            background: #ffffff;
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                        }
+            
+                        /* For print */
+                        @media print {
+                            .page {
+                                page-break-after: always;
+                            }
+                            .section {
+                                page-break-inside: avoid; /* Prevents breaking inside sections */
+                            }
+                        }
+            
+                        /* Resume layout */
+                        h1 {
+                            font-size: 24px;
+                            text-align: center;
+                            margin: 0;
+                        }
+                        .contact-info {
+                            text-align: center;
+                            font-size: 12px;
+                            margin-bottom: 10px;
+                        }
+                        .section {
+                            margin-top: 20px;
+                        }
+                        .section-title {
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            border-bottom: 1px solid #000;
+                            padding-bottom: 5px;
+                            margin-bottom: 10px;
+                        }
+                        .content {
+                            margin-left: 15px;
+                        }
+                        .content h3 {
+                            font-size: 14px;
+                            margin: 0;
+                            font-weight: bold;
+                        }
+                        .content p {
+                            margin: 5px 0;
+                            font-size: 12px;
+                        }
+                        .skills-list, .projects-list, .extra-list {
+                            list-style-type: none;
+                            padding-left: 0;
+                        }
+                        .skills-list li, .projects-list li, .extra-list li {
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                
+                
+                
+                    <div class="page">
+                        <h1>Firstname Lastname</h1>
+                        <p class="contact-info">
+                            +1(123) 456-7890 ◊ San Francisco, CA<br>
+                            contact@faangpath.com ◊ linkedin.com/company/faangpath ◊ www.faangpath.com
+                        </p>
+                
+                        <!-- Objective Section -->
+                        <div class="section">
+                            <div class="section-title">Objective</div>
+                            <div class="content">
+                                <p>Software Engineer with 2+ years of experience in XXX, seeking full-time XXX roles.</p>
+                            </div>
+                        </div>
+                
+                        <!-- Education Section -->
+                        <div class="section">
+                            <div class="section-title">Education</div>
+                            <div class="content">
+                                <h3>Master of Computer Science, Stanford University</h3>
+                                <p>Expected 2020</p>
+                                <p>Relevant Coursework: A, B, C, and D.</p>
+                
+                                <h3>Bachelor of Computer Science, Stanford University</h3>
+                                <p>2014 - 2017</p>
+                            </div>
+                        </div>
+                
+                        <!-- Skills Section -->
+                        <div class="section">
+                            <div class="section-title">Skills</div>
+                            <div class="content">
+                                <ul class="skills-list">
+                                    <li>Technical Skills: A, B, C, D</li>
+                                    <li>Soft Skills: A, B, C, D</li>
+                                    <li>XYZ: A, B, C, D</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <!-- Experience Section -->
+                        <div class="section">
+                            <div class="section-title">Experience</div>
+                            <div class="content">
+                                <h3>Role Name, Company Name</h3>
+                                <p>Jan 2017 - Jan 2019, San Francisco, CA</p>
+                                <ul class="skills-list">
+                                    <li>Achieved X% growth for XYZ using A, B, and C skills.</li>
+                                    <li>Led XYZ which led to X% of improvement in ABC.</li>
+                                    <li>Developed XYZ that did A, B, and C using X, Y, and Z.</li>
+                                </ul>
+                                <h3>Role Name, Company Name</h3>
+                                <p>Jan 2017 - Jan 2019, San Francisco, CA</p>
+                                <ul class="skills-list">
+                                    <li>Achieved X% growth for XYZ using A, B, and C skills.</li>
+                                    <li>Led XYZ which led to X% of improvement in ABC.</li>
+                                    <li>Developed XYZ that did A, B, and C using X, Y, and Z.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <!-- Projects Section -->
+                        <div class="section">
+                            <div class="section-title">Projects</div>
+                            <div class="content">
+                                <ul class="projects-list">
+                                    <li><b>Hiring Search Tool:</b> Built a tool to search for Hiring Managers and Recruiters using ReactJS, NodeJS, Firebase and boolean queries. Over 25000 people have used it so far.</li>
+                                    <li><b>Short Project Title:</b> Build a project that does something and had quantified success using A, B, and C.</li>
+                                    <li><b>Short Project Title:</b> Build a project that does something and had quantified success using A, B, and C.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <!-- Extra-curricular Activities Section -->
+                        <div class="section">
+                            <div class="section-title">Extra-curricular Activities</div>
+                            <div class="content">
+                                <ul class="extra-list">
+                                    <li>Actively write blog posts and social media posts to help people with best practices to land their dream jobs.</li>
+                                    <li>Sample bullet point.</li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <!-- Leadership Section -->
+                        <div class="section">
+                            <div class="section-title">Leadership</div>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,57 +302,20 @@
     </script>
     <script>
         function addEducation() {
-    // Create a new education entry div
-    const educationDiv = document.createElement('div');
-    educationDiv.className = 'education-entry mb-3';
-
-    // Create degree input
-    const degreeLabel = document.createElement('label');
-    degreeLabel.className = 'form-label';
-    degreeLabel.innerText = 'Degree';
-    const degreeInput = document.createElement('input');
-    degreeInput.type = 'text';
-    degreeInput.className = 'form-control';
-    degreeInput.placeholder = 'Enter your degree';
-    degreeInput.required = true;
-
-    // Create institution input
-    const institutionDiv = document.createElement('div');
-    institutionDiv.className = 'education-entry mb-3';
-    const institutionLabel = document.createElement('label');
-    institutionLabel.className = 'form-label';
-    institutionLabel.innerText = 'Institution';
-    const institutionInput = document.createElement('input');
-    institutionInput.type = 'text';
-    institutionInput.className = 'form-control';
-    institutionInput.placeholder = 'Enter your institution';
-    institutionInput.required = true;
-
-    // Create graduation year input
-    const yearDiv = document.createElement('div');
-    yearDiv.className = 'education-entry mb-3';
-    const yearLabel = document.createElement('label');
-    yearLabel.className = 'form-label';
-    yearLabel.innerText = 'Graduation Year';
-    const yearInput = document.createElement('input');
-    yearInput.type = 'number';
-    yearInput.className = 'form-control';
-    yearInput.placeholder = 'Enter your graduation year';
-    yearInput.required = true;
-
-    // Append inputs to the education entry
-    educationDiv.appendChild(degreeLabel);
-    educationDiv.appendChild(degreeInput);
-    institutionDiv.appendChild(institutionLabel);
-    institutionDiv.appendChild(institutionInput);
-    yearDiv.appendChild(yearLabel);
-    yearDiv.appendChild(yearInput);
-    
-    // Append new education entry to the fields container
-    document.getElementById('educationFields').appendChild(educationDiv);
-    document.getElementById('educationFields').appendChild(institutionDiv);
-    document.getElementById('educationFields').appendChild(yearDiv);
-}
+            const educationFields = document.getElementById('educationFields');
+            const educationEntry = document.createElement('div');
+            educationEntry.className = 'education-entry mb-3';
+            educationEntry.innerHTML = `
+                <label class="form-label">Degree</label>
+                <input type="text" name="degree[]" class="form-control mb-2" placeholder="Enter your degree" required>
+                <label class="form-label">Institution</label>
+                <input type="text" name="institution[]" class="form-control mb-2" placeholder="Enter your institution" required>
+                <label class="form-label">Graduation Year</label>
+                <input type="number" name="graduationYear[]" class="form-control" placeholder="Enter your graduation year" required>
+            `;
+            educationFields.appendChild(educationEntry);
+        }
+        
 
     </script>
 
