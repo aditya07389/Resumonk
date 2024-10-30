@@ -27,11 +27,9 @@
                         <a class="nav-link" href="#">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#">Edit Resume</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Signup</a>
-                    </li>
+                    
                     
                 </ul>
             </div>
@@ -77,91 +75,88 @@
     <section class="hero text-center text-white py-5" style="background-color: #343a40;">
         <div class="container">
             <h1 class="display-4">Create Professional Resumes for Free!</h1>
-            <p class="lead">Choose from two customizable templates to make your perfect resume.</p>
-            <a class="btn btn-primary btn-lg" href="#">Create My Resume</a>
+            <p class="lead">Choose from the templates to make your perfect resume.</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'choose_template' %}">Get started</a>
         </div>
     </section>
 
-    <!-- Template Preview Section -->
-    <section class="templates text-center py-5">
+    <!-- How It Works Section -->
+    <section class="how-it-works py-5 bg-light">
         <div class="container">
-            <h2 class="mb-4">Choose Your Resume Template</h2>
-            <div class="row">
+            <h2 class="text-center mb-4">How It Works</h2>
+            <div class="row text-center">
+
+                <div class="col-md-4">
+                    <img src="{% static 'App/Images/choose.png' %}" alt="Step 1" class="mb-3 step-img">
+                    <h4>Step 1</h4>
+                    <p>Choose a template.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="{% static 'App/Images/detail.png' %}" alt="Step 2" class="mb-3 step-img">
+                    <h4>Step 2</h4>
+                    <p>Fill in your details.</p>
+                </div>
+                
+                <div class="col-md-4">
+                    <img src="{% static 'App/Images/download.png' %}" alt="Step 3" class="mb-3 step-img">
+                    <h4>Step 3</h4>
+                    <p>Download your resume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .step-img {
+    width: 80px; /* Adjust as needed */
+    height: auto;
+}
+
+    </style>
+    
+
+    <section class="templates py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Templates available</h2>
+            <div class="row text-center">
                 <!-- Template 1 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template1.jpeg' %}" alt="Template 1" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Modern Resume</h3>
-                        <p>Perfect for tech professionals and creatives.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'App/Images/template1.png' %}" class="card-img-top" alt="Template 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Template 1</h5>
+                            <p class="card-text">A clean and modern template suitable for all professions.</p>
+                            <!-- <a href="#" class="btn btn-primary">Select Template</a> -->
+                        </div>
                     </div>
                 </div>
                 <!-- Template 2 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template2.jpeg' %}" alt="Template 2" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Classic Resume</h3>
-                        <p>Best for corporate or formal job applications.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'App/Images/template2.png' %}" class="card-img-top" alt="Template 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Template 2</h5>
+                            <p class="card-text">A creative template with bold colors and unique design.</p>
+                            <!-- <a href="#" class="btn btn-primary">Select Template</a> -->
+                        </div>
                     </div>
                 </div>
                 <!-- Template 3 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template3.jpeg' %}" alt="Template 3" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Creative Resume</h3>
-                        <p>Ideal for designers and artists.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
-                    </div>
-                </div>
-                <!-- Template 4 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template4.jpeg' %}" alt="Template 4" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Professional Resume</h3>
-                        <p>Suitable for business and management roles.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
-                    </div>
-                </div>
-                <!-- Template 5 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template5.jpeg' %}" alt="Template 5" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Minimal Resume</h3>
-                        <p>A clean look for modern professionals.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
-                    </div>
-                </div>
-                <!-- Template 6 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template6.jpeg' %}" alt="Template 6" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Bold Resume</h3>
-                        <p>For confident and standout applicants.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
-                    </div>
-                </div>
-                <!-- Template 7 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template7.jpeg' %}" alt="Template 7" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Elegant Resume</h3>
-                        <p>Perfect for elegant, professional presentations.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
-                    </div>
-                </div>
-                <!-- Template 8 -->
-                <div class="col-md-3">
-                    <div class="template-box border p-3 mb-4">
-                        <img src="{% static 'App/images/template8.jpeg' %}" alt="Template 8" class="img-fluid w-50 border border-dark">
-                        <h3 class="mt-3">Functional Resume</h3>
-                        <p>Highlights skills and experiences.</p>
-                        <a class="btn btn-primary" href="#">Choose Template</a>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'App/Images/template3.png' %}" class="card-img-top" alt="Template 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Template 3</h5>
+                            <p class="card-text">A classic template, perfect for a professional resume.</p>
+                            <!-- <a href="#" class="btn btn-primary">Select Template</a> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <section class="about-us py-5 bg-light">
         <div class="container">
@@ -239,34 +234,7 @@
     
     
 
-    <!-- How It Works Section -->
-    <section class="how-it-works py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">How It Works</h2>
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <img src="icon1.png" alt="Step 1" class="mb-3">
-                    <h4>Step 1</h4>
-                    <p>Choose a template.</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="icon2.png" alt="Step 2" class="mb-3">
-                    <h4>Step 2</h4>
-                    <p>Fill in your details.</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="icon3.png" alt="Step 3" class="mb-3">
-                    <h4>Step 3</h4>
-                    <p>Customize it.</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="icon4.png" alt="Step 4" class="mb-3">
-                    <h4>Step 4</h4>
-                    <p>Download your resume.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Footer Section -->
     <footer class="bg-dark text-white text-center py-3">

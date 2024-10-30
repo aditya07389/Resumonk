@@ -20,5 +20,7 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index,name="index")
+    path('',views.index,name="index"),
+    path('details/',views.details,name="details"),
+    path('choose_template',views.choose_template,name="choose_template")
 ]
