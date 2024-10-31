@@ -16,7 +16,7 @@
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <form id="resumeForm">
                     <!-- Step 1: Personal Information -->
                     <div class="step active" id="step1">
@@ -26,40 +26,56 @@
                             <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
                         </div>
                         <div class="mb-3">
-                            <label for="github" class="form-label">GitHub Profile URL</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your github url" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="linkedin" class="form-label">LinkedIn Profile URL</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your linkedin url" required>
+                            <label for="email" class="form-label">City</label>
+                            <input type="text" id="city1" class="form-control" placeholder="Bengaluru" required>
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="linkedin" class="form-label">LinkedIn Profile URL</label>
+                            <input type="tel" id="linkedin" class="form-control" placeholder="Enter your linkedin url" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="github" class="form-label">GitHub Profile URL</label>
+                            <input type="tel" id="github" class="form-control" placeholder="Enter your github url" required>
+                        </div>
+                        
                         <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
                     </div>
 
                     <!-- Step 2: Education -->
 <div  class="step" id="step2">
+    <h3>Objective</h3>
+    <div id="objective">
+        <div class="objective-entry mb-3">
+            <label for="objective" class="form-label">Objective</label>
+            <textarea id="objective1" class="form-control" rows="3" required></textarea>
+        </div>
+    </div>
     <h3>Education</h3>
     <div id="educationFields">
         <div class="education-entry mb-3">
             <label for="degree" class="form-label">Degree</label>
-            <input type="text" class="form-control" placeholder="Enter your degree" required>
+            <input type="text" id="degree" class="form-control" placeholder="Enter your degree and Institute" required>
         </div>
         <div class="education-entry mb-3">
-            <label for="institution" class="form-label">Institution</label>
-            <input type="text" class="form-control" placeholder="Enter your institution" required>
+            <label for="duration" class="form-label">Course Duration</label>
+            <input type="text" id="duration" class="form-control" placeholder="2022-2026" required>
         </div>
+        
         <div class="education-entry mb-3">
-            <label for="graduationYear" class="form-label">Graduation Year</label>
-            <input type="number" class="form-control" placeholder="Enter your graduation year" required>
+            <label for="description" class="form-label">Course Description/Relevant Coursework</label>
+            <input type="text" id="description" class="form-control" placeholder="Coursework... e.g., achieved a CGPA of 9, worked on a research paper, etc.">
         </div>
+        
     </div>
     <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Previous</button>
     <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
@@ -98,7 +114,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <!-- Placeholder for resume preview or other content -->
                 <h4>Resume Preview</h4>
                 <div id="resumePreview" class="border p-3" style="height: 400px; overflow-y: auto; overflow-x: hidden; max-width: 100%;">
@@ -177,22 +193,25 @@
                         .skills-list li, .projects-list li, .extra-list li {
                             margin-bottom: 5px;
                         }
+                        a{
+                            text-decoration:none;
+                        }
                     </style>
                 
                 
                 
                     <div class="page">
-                        <h1>Firstname Lastname</h1>
+                        <h1 id="displayName">Firstname Lastname</h1>
                         <p class="contact-info">
-                            +1(123) 456-7890 ◊ San Francisco, CA<br>
-                            contact@faangpath.com ◊ linkedin.com/company/faangpath ◊ www.faangpath.com
+                           <span id="phone1"> +1(123) 456-7890 </span>◊<span id="city">San Francisco, CA</span><br>
+                           <span id="inputEmail"><a href="">Gmail</a></span>◊<span id="linkedin1"><a href="">linkedin.com</a></span>◊ <span id="githubLink"><a href="">GitHub.com</a></span>
                         </p>
                 
                         <!-- Objective Section -->
                         <div class="section">
                             <div class="section-title">Objective</div>
                             <div class="content">
-                                <p>Software Engineer with 2+ years of experience in XXX, seeking full-time XXX roles.</p>
+                                <p id="objectiveInput">Software Engineer with 2+ years of experience in XXX, seeking full-time XXX roles.</p>
                             </div>
                         </div>
                 
@@ -200,12 +219,9 @@
                         <div class="section">
                             <div class="section-title">Education</div>
                             <div class="content">
-                                <h3>Master of Computer Science, Stanford University</h3>
-                                <p>Expected 2020</p>
-                                <p>Relevant Coursework: A, B, C, and D.</p>
-                
-                                <h3>Bachelor of Computer Science, Stanford University</h3>
-                                <p>2014 - 2017</p>
+                                <h3 id="degree1">Bachelor of Computer Science, Stanford University</h3>
+                                <p id="duration1">2020-2024</p>
+                                <p id="description1">Coursework</p>
                             </div>
                         </div>
                 
@@ -265,19 +281,62 @@
                             </div>
                         </div>
                 
-                        <!-- Leadership Section -->
-                        <div class="section">
-                            <div class="section-title">Leadership</div>
-                            <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        document.getElementById("fullName").addEventListener("input", function() {
+          const name = this.value;
+          document.getElementById("displayName").textContent = name || "Firstname Lastname";
+        });
+        document.getElementById("degree").addEventListener("input", function() {
+    const degree = this.value;
+    document.getElementById("degree1").textContent = degree || "B.E. in ISE";
+});
+
+document.getElementById("duration").addEventListener("input", function() {
+    const duration = this.value;
+    document.getElementById("duration1").textContent = duration || "2022-2026";
+});
+
+document.getElementById("description").addEventListener("input", function() {
+    const description = this.value;
+    document.getElementById("description1").textContent = description || "Coursework";
+});
+
+        document.getElementById("email").addEventListener("input", function() {
+            const email = this.value;
+            const emailLink = document.querySelector("#inputEmail a");
+            emailLink.href = email ? `mailto:${email}` : "#";
+          });
+          document.getElementById("linkedin").addEventListener("input", function() {
+            const linkedinUrl = this.value;
+            const linkedinLink = document.querySelector("#linkedin1 a");
+            linkedinLink.href = linkedinUrl ? linkedinUrl : "#";
+          });
+          document.getElementById("github").addEventListener("input", function() {
+            const githubUrl = this.value;
+            const githubLink = document.querySelector("#githubLink a");
+            githubLink.href = githubUrl ? githubUrl : "#";
+          });
+          document.getElementById("objective1").addEventListener("input", function() {
+          const objective = this.value;
+          document.getElementById("objectiveInput").textContent = objective || "your objective for the job/internship";
+        });
+        document.getElementById("city1").addEventListener("input", function() {
+          const city = this.value;
+          document.getElementById("city").textContent = city || "Bengaluru";
+        });
+        document.getElementById("phone").addEventListener("input", function() {
+          const phone = this.value;
+          document.getElementById("phone1").textContent = phone || "+91XXXXX876";
+        });
+
+      </script>
     <script>
         function nextStep(currentStep) {
             const current = document.getElementById(`step${currentStep}`);
@@ -307,11 +366,11 @@
             educationEntry.className = 'education-entry mb-3';
             educationEntry.innerHTML = `
                 <label class="form-label">Degree</label>
-                <input type="text" name="degree[]" class="form-control mb-2" placeholder="Enter your degree" required>
-                <label class="form-label">Institution</label>
-                <input type="text" name="institution[]" class="form-control mb-2" placeholder="Enter your institution" required>
-                <label class="form-label">Graduation Year</label>
-                <input type="number" name="graduationYear[]" class="form-control" placeholder="Enter your graduation year" required>
+                <input type="text" name="degree[]" class="form-control mb-2" placeholder="Enter your degree and Institute" required>
+                <label class="form-label">Course Duration</label>
+                <input type="text" name="graduationYear[]" class="form-control" placeholder="Course Duration" required>
+                <label class="form-label">Course Description/Relevant Coursework</label>
+                <input type="text" id="description[]" class="form-control" placeholder="Coursework... e.g., achieved a CGPA of 9, worked on a research paper, etc.">
             `;
             educationFields.appendChild(educationEntry);
         }
