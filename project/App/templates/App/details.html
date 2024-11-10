@@ -83,8 +83,30 @@
 </div>
 
 
+    {% comment %} step 3 : technical , soft skills and others {% endcomment %}
+
+    <div class="step" id="step3">
+        <h3>Skills</h3>
+        <div class="mb-3">
+            <label for="jobSkills" class="form-label">Technical Skills</label>
+            <input type="text" id="jobSkills" class="form-control" placeholder="enter your tech skills" required>
+        </div>
+        <div class="mb-3">
+            <label for="jobSkills" class="form-label">Soft Skills</label>
+            <input type="text" id="jobSkills" class="form-control" placeholder="enter soft skills" required>
+        </div>
+        <div class="mb-3">
+            <label for="jobSkills" class="form-label">Others X,Y,Z</label>
+            <input type="text" id="jobSkills" class="form-control" placeholder="other skills" required>
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
+
+    </div>
+
+
                     <!-- Step 3: Work Experience -->
-                    <div class="step" id="step3">
+                    <div class="step" id="step4">
                         <h3>Work Experience</h3>
                         <div class="mb-3">
                             <label for="jobTitle" class="form-label">Job Title</label>
@@ -96,21 +118,42 @@
                         </div>
                         <div class="mb-3">
                             <label for="yearsWorked" class="form-label">Years Worked</label>
-                            <input type="number" id="yearsWorked" class="form-control" placeholder="Enter years worked" required>
+                            <input type="text" id="yearsWorked" class="form-control" placeholder="Enter years worked" required>
                         </div>
-                        <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
-                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
-                    </div>
-
-                    <!-- Step 4: Skills -->
-                    <div class="step" id="step4">
-                        <h3>Skills</h3>
                         <div class="mb-3">
-                            <label for="skills" class="form-label">Skills (comma separated)</label>
-                            <input type="text" id="skills" class="form-control" placeholder="e.g., HTML, CSS, JavaScript" required>
+                            <label for="jobDescription" class="form-label">Job Description</label>
+                            <textarea id="jobDescription" class="form-control" rows="3" required></textarea>
                         </div>
                         <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Previous</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
+                        <button type="button" class="btn btn-info" onclick="addJob()">Add one more</button>
+                    </div>
+
+                    <!-- Step 4: Projects -->
+                    <div class="step" id="step5">
+                        <h3>Projects</h3>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Project title</label>
+                            <input type="text" id="projTitle" class="form-control" placeholder="Resumonk" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Desc" class="form-label">Description</label>
+                            <input type="text" id="projTitle" class="form-control" placeholder="A free resume builder for ...">
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
+                        <button type="button" class="btn btn-info" onclick="addProject()">Add More Project</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
+                    </div>
+
+                    <div class="step" id="step6">
+                        <h3>Extra-curricular</h3>
+                        <div class="mb-3">
+                            <label for="extraTitle" class="form-label">Activity</label>
+                            <input type="text" id="extraTitle" class="form-control" placeholder="Title">
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
+                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="button" class="btn btn-info" onclick="addActivity()">Add More Activity</button>
                     </div>
                 </form>
             </div>
@@ -374,6 +417,134 @@ document.getElementById("description").addEventListener("input", function() {
             `;
             educationFields.appendChild(educationEntry);
         }
+
+
+        function addJob() {
+    // Create a container div for the new job entry
+    const jobEntry = document.createElement("div");
+    jobEntry.classList.add("job-entry", "mb-3");
+
+    // Job Title
+    const jobTitleLabel = document.createElement("label");
+    jobTitleLabel.classList.add("form-label");
+    jobTitleLabel.textContent = "Job Title";
+    const jobTitleInput = document.createElement("input");
+    jobTitleInput.type = "text";
+    jobTitleInput.classList.add("form-control");
+    jobTitleInput.placeholder = "Enter your job title";
+    jobTitleInput.required = true;
+
+    // Company
+    const companyLabel = document.createElement("label");
+    companyLabel.classList.add("form-label");
+    companyLabel.textContent = "Company";
+    const companyInput = document.createElement("input");
+    companyInput.type = "text";
+    companyInput.classList.add("form-control");
+    companyInput.placeholder = "Enter your company name";
+    companyInput.required = true;
+
+    // Years Worked
+    const yearsWorkedLabel = document.createElement("label");
+    yearsWorkedLabel.classList.add("form-label");
+    yearsWorkedLabel.textContent = "Years Worked";
+    const yearsWorkedInput = document.createElement("input");
+    yearsWorkedInput.type = "text";
+    yearsWorkedInput.classList.add("form-control");
+    yearsWorkedInput.placeholder = "Enter years worked";
+    yearsWorkedInput.required = true;
+
+    // Job Description
+    const jobDescriptionLabel = document.createElement("label");
+    jobDescriptionLabel.classList.add("form-label");
+    jobDescriptionLabel.textContent = "Job Description";
+    const jobDescriptionTextarea = document.createElement("textarea");
+    jobDescriptionTextarea.classList.add("form-control");
+    jobDescriptionTextarea.rows = 3;
+    jobDescriptionTextarea.required = true;
+
+    // Append elements to the job entry container
+    jobEntry.appendChild(jobTitleLabel);
+    jobEntry.appendChild(jobTitleInput);
+    jobEntry.appendChild(companyLabel);
+    jobEntry.appendChild(companyInput);
+    jobEntry.appendChild(yearsWorkedLabel);
+    jobEntry.appendChild(yearsWorkedInput);
+    jobEntry.appendChild(jobDescriptionLabel);
+    jobEntry.appendChild(jobDescriptionTextarea);
+
+    // Insert the new job entry before the buttons
+    const step4 = document.getElementById("step4");
+    const buttons = step4.querySelectorAll("button");
+    step4.insertBefore(jobEntry, buttons[0]);
+}
+
+
+function addProject() {
+    // Create a container div for the new project entry
+    const projectEntry = document.createElement("div");
+    projectEntry.classList.add("project-entry", "mb-3");
+
+    // Project Title
+    const projectTitleLabel = document.createElement("label");
+    projectTitleLabel.classList.add("form-label");
+    projectTitleLabel.textContent = "Project Title";
+    const projectTitleInput = document.createElement("input");
+    projectTitleInput.type = "text";
+    projectTitleInput.classList.add("form-control");
+    projectTitleInput.placeholder = "Enter project title";
+    projectTitleInput.required = true;
+
+    // Project Description
+    const projectDescLabel = document.createElement("label");
+    projectDescLabel.classList.add("form-label");
+    projectDescLabel.textContent = "Description";
+    const projectDescInput = document.createElement("input");
+    projectDescInput.type = "text";
+    projectDescInput.classList.add("form-control");
+    projectDescInput.placeholder = "Enter project description";
+    projectDescInput.required = true;
+
+    // Append elements to the project entry container
+    projectEntry.appendChild(projectTitleLabel);
+    projectEntry.appendChild(projectTitleInput);
+    projectEntry.appendChild(projectDescLabel);
+    projectEntry.appendChild(projectDescInput);
+
+    // Insert the new project entry before the buttons
+    const step5 = document.getElementById("step5");
+    const buttons = step5.querySelectorAll("button");
+    step5.insertBefore(projectEntry, buttons[0]);
+}
+
+
+function addActivity() {
+    // Create a container div for the new activity entry
+    const activityEntry = document.createElement("div");
+    activityEntry.classList.add("activity-entry", "mb-3");
+
+    // Activity Title Label
+    const activityLabel = document.createElement("label");
+    activityLabel.classList.add("form-label");
+    activityLabel.textContent = "Activity";
+
+    // Activity Input Field
+    const activityInput = document.createElement("input");
+    activityInput.type = "text";
+    activityInput.classList.add("form-control");
+    activityInput.placeholder = "Enter activity title";
+    activityInput.required = true;
+
+    // Append elements to the activity entry container
+    activityEntry.appendChild(activityLabel);
+    activityEntry.appendChild(activityInput);
+
+    // Insert the new activity entry before the buttons
+    const step6 = document.getElementById("step6");
+    const buttons = step6.querySelectorAll("button");
+    step6.insertBefore(activityEntry, buttons[0]);
+}
+
         
 
     </script>
